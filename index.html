@@ -14,6 +14,9 @@
       <div class="nav-bar"></div>
 
       <h1>{{ intro }}</h1>
+      <button v-on:click="vis_navn = !vis_navn">Navn</button>
+      <p v-if="vis_navn">Navn: {{ navn }}</p>
+      <p v-show="vis_navn == true">Efternavn: {{ efternavn }}</p>
       
     </div>
 
