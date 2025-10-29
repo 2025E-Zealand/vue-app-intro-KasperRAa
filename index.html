@@ -14,6 +14,25 @@
       <div class="nav-bar"></div>
 
       <h1>{{ intro }}</h1>
+      <button v-on:click="vis_navn = !vis_navn">Vis Navn</button>
+      <p v-if="vis_navn">Fornavn: {{ fornavn }}</p>
+      <p v-show="vis_navn == true">Efternavn: {{ efternavn }}</p>
+      <br>
+      <br>
+      <input type="text" v-model="nytNavn">
+      <input type="number" v-model="nyAlder">
+      <br>
+      <button @click=addName>Tilføj ({{ nytNavn }} : {{ nyAlder }})</button>
+      <br>
+      <br>
+      <button @click=emptyNames>Tøm</button>
+      <ul>
+        <li v-for='obj in navne'>
+          {{ obj.navn }}
+          :
+          {{ obj.alder }}
+        </li>
+      </ul>
       
     </div>
 
